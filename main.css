@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+body {
+    height: 700px;
+    background-color: red; 
+    background-image: linear-gradient(to right , rgb(129, 224, 69) , rgb(223, 108, 55)); 
+    font-family: "Sriracha", monospace;
+    padding-top: 10%;
+}
