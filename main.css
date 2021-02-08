@@ -1,9 +1,105 @@
 @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
 body {
-    height: 700px;
+    height: 500px;
     background-color: red; 
     background-image: linear-gradient(to right , rgb(129, 224, 69) , rgb(223, 108, 55)); 
-    font-family: "Sriracha", monospace;
+}
+
+h1 {
+    font-size: 600%;
+    text-align: center;
+    color: rgb(68, 163, 68);
+    font-family: "Indie Flower", monospace;
+    font-weight:600;
+    text-shadow: 2px 2px 2px black;
+    padding-bottom: 0;
+}
+
+h2 {
+    display: none;
+    font-size: 200%;
+    text-align: center;
+    color: rgb(68, 163, 68);
+    font-family: "Indie Flower", monospace;
+    font-weight:600;
+    text-shadow: 2px 2px 2px black;
+}
+
+.gamearea {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    border: rgb(209, 75, 75) solid 6px;
+    border-style: ridge;
+    height: 450px;
+    width: 1000px;
+}
+
+.buttonbox {
+    position: absolute;
+    width: 150px;
+    left: 250px;
+    top: 100px;
+}
+
+.petImg {
+    display: none;
     padding-top: 10%;
+    text-align: center;
+}
+
+#dogImg {
+    border-radius: 10%;
+    border: black 2px solid;
+}
+
+#catImg {
+    border-radius: 10%;
+    border: black 2px solid;
+}
+
+#rabImg {
+    border-radius: 10%;
+    border: black 2px solid;
+}
+
+
+#start {
+    font-family: "Indie Flower", monospace;
+    font-size: 600%;
+    background: goldenrod;
+    margin-left: 60%;
+    margin-top: 40%;
+}
+
+#restart {
+    display: none;
+    font-family: "Indie Flower", monospace;
+    font-size: 200%;
+    background: goldenrod;
+    position: relative;
+}
+
+#choose {
+    display: none;
+    font-family: "Indie Flower", monospace;
+    font-size: 400%;
+    background: goldenrod;
+    margin-left: 80%;
+    margin-top: 40%;
+}
+
+#dog {
+    display: none;
+}
+
+#cat {
+    display: none;
+}
+
+#rabbit {
+    display: none;
 }

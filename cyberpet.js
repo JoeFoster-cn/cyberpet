@@ -106,3 +106,29 @@ poppy.drink();
 
 console.table(poppy); //stats
 console.log(poppy.noplay());
+
+
+
+
+//variables
+const start = document.querySelector("#start");
+const restart = document.querySelector("#restart");
+const choose = document.querySelector("#choose");
+const dogImg = document.querySelector("#dogImg");
+const catImg = document.querySelector("#catImg");
+const rabImg = document.querySelector("#rabImg");
+const petImg = document.querySelector(".petImg");
+
+start.addEventListener("click", (event) => {
+    choose.style.display = "block";
+    start.style.display = "none";
+})
+
+choose.addEventListener("click", (event) => {
+    petImg.style.display = "block";
+    choose.style.display = "none";
+})
+
+// let petImg = document.getElementById("petImg").src = "./img/" + diceRoll + ".png";
+// diceNum = document.querySelector("#diceImg");
+// diceNum.style.display = "block"; 
