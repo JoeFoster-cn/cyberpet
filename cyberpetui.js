@@ -18,6 +18,11 @@ const rabText = document.querySelector("#selectRab");
 const input = document.getElementById("input");
 const submit = document.getElementById("submit");
 const placeholder = document.getElementById("placeholder");
+const info = document.querySelector(".info");
+const dogButtons = document.querySelector(".dogButtons");
+const catButtons = document.querySelector(".catButtons");
+const rabButtons = document.querySelector(".rabButtons");
+const animalButtons = document.querySelector(".animalButtons");
 
 start.addEventListener("click", (event) => {
     choose.style.display = "block";
@@ -38,6 +43,7 @@ dogImg.addEventListener("click", (event) => {
     selectDog.style.display = "block";
     input.style.display = "block";
     submit.style.display = "block";
+    info.style.display = "block"
     pet = new Dog ("Poppy");
 })
 
@@ -50,6 +56,8 @@ catImg.addEventListener("click", (event) => {
     selectCat.style.display = "block";
     input.style.display = "block";
     submit.style.display = "block";
+    info.style.display = "block"
+    pet = new Cat ("Prince");
 })
 
 rabImg.addEventListener("click", (event) => {
@@ -61,12 +69,19 @@ rabImg.addEventListener("click", (event) => {
     selectRab.style.display = "block";
     input.style.display = "block";
     submit.style.display = "block";
+    info.style.display = "block"
+    pet = new Rabbit ("Hoppy");
 })
 
 submit.addEventListener("click", () =>{
     placeholder.style.display = "block";
-    placeholder.style.color = "goldenrod";
     placeholder.textContent = input.value;
+    submit.style.display = "none";
+    input.style.display = "none";
+    selectRab.style.display = "none";
+    selectCat.style.display = "none";
+    selectDog.style.display = "none";
+    animalButtons.style.display = "block";
 })
 // let petImg = document.getElementById("petImg").src = "./img/" + diceRoll + ".png";
 // diceNum = document.querySelector("#diceImg");
