@@ -110,7 +110,7 @@ console.log(poppy.noplay());
 
 
 
-//variables
+//variables - use let instead?
 const start = document.querySelector("#start");
 const restart = document.querySelector("#restart");
 const choose = document.querySelector("#choose");
@@ -125,6 +125,9 @@ const petImg2 = document.querySelector(".petImg2");
 const dogText = document.querySelector("#selectDog");
 const catText = document.querySelector("#selectCat");
 const rabText = document.querySelector("#selectRab");
+const input = document.getElementById("input");
+const submit = document.getElementById("submit");
+const placeholder = document.getElementById("placeholder");
 
 start.addEventListener("click", (event) => {
     choose.style.display = "block";
@@ -143,6 +146,8 @@ dogImg.addEventListener("click", (event) => {
     rabbitImg2.style.display = "none";
     dogImg2.style.display = "block";
     selectDog.style.display = "block";
+    input.style.display = "block";
+    submit.style.display = "block";
 })
 
 catImg.addEventListener("click", (event) => {
@@ -152,6 +157,8 @@ catImg.addEventListener("click", (event) => {
     rabbitImg2.style.display = "none";
     dogImg2.style.display = "none";
     selectCat.style.display = "block";
+    input.style.display = "block";
+    submit.style.display = "block";
 })
 
 rabImg.addEventListener("click", (event) => {
@@ -161,8 +168,15 @@ rabImg.addEventListener("click", (event) => {
     rabbitImg2.style.display = "block";
     dogImg2.style.display = "none";
     selectRab.style.display = "block";
+    input.style.display = "block";
+    submit.style.display = "block";
 })
 
+submit.addEventListener("click", () =>{
+    placeholder.style.display = "block";
+    placeholder.style.color = "goldenrod";
+    placeholder.textContent = input.value;
+})
 // let petImg = document.getElementById("petImg").src = "./img/" + diceRoll + ".png";
 // diceNum = document.querySelector("#diceImg");
 // diceNum.style.display = "block"; 

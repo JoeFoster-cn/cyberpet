@@ -147,3 +147,21 @@ h2 {
     text-align: right;
     font-size: 200%;
 }
+
+.info {
+    padding-top: 40%;
+}
+
+#placeholder {
+    display: none;
+}
+
+#input {
+    display: none;    
+    height: 50px;
+    color: chartreuse;
+}
+
+#submit {
+    display: none;
+}
