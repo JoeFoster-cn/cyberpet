@@ -24,14 +24,15 @@ const catButtons = document.querySelector(".catButtons");
 const rabButtons = document.querySelector(".rabButtons");
 const animalButtons = document.querySelector(".animalButtons");
 
-start.addEventListener("click", (event) => {
-    choose.style.display = "block";
-    start.style.display = "none";
+
+restart.addEventListener("click", (event) => {
+    location.reload();
 })
 
 choose.addEventListener("click", (event) => {
     petImg.style.display = "block";
     choose.style.display = "none";
+    restart.style.display = "none";
 })
 
 dogImg.addEventListener("click", (event) => {
@@ -82,7 +83,17 @@ submit.addEventListener("click", () =>{
     selectCat.style.display = "none";
     selectDog.style.display = "none";
     animalButtons.style.display = "block";
+    restart.style.display = "block";
 })
+
+
+
+// const atchEL = () => {
+//     play.addEventListener("click", => {pet.play())} 
+//     feed.addEventListener pet.feed
+//     drink.addEventListener pet.drink
+// }
+
 // let petImg = document.getElementById("petImg").src = "./img/" + diceRoll + ".png";
 // diceNum = document.querySelector("#diceImg");
 // diceNum.style.display = "block"; 

@@ -2,9 +2,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
+@keyframes bounce {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-100px); }
+    100% { transform: translateY(0); }
+  }
+
+html {
+    position:fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
 body {
-    height: 500px;
-    background-color: red; 
     background-image: linear-gradient(to right , rgb(129, 224, 69) , rgb(223, 108, 55)); 
 }
 
@@ -31,17 +43,7 @@ h2 {
 /* comment this out? */
 .gamearea {
     display: flex;
-    flex-direction: row;
-    position: relative;
-    height: 450px;
-    width: 1000px;
-}
-
-.buttonbox {
-    position: absolute;
-    width: 150px;
-    left: 420px;
-    top: 50px;
+    flex-direction: column;
 }
 
 .petImg {
@@ -52,69 +54,136 @@ h2 {
     padding-left: 10%;
 }
 
+
 .petImg2 {
     display: none;
-    
     text-align: center;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+}
+
+.bounce:hover {
+    animation-name: bounce;
+    animation-timing-function: ease;
+
 }
 
 #dogImg {
-    border-radius: 10%;
-    border: black 2px solid;
+    height: 300px;
+    width: 300px;
+    cursor:pointer;
+    border-radius: 50%;
+    border: rebeccapurple 2px solid;
+    transition: .2s;
+}
+
+#dogImg:hover {
+    transform: scale(1.5);
 }
 
 #catImg {
-    border-radius: 10%;
-    border: black 2px solid;
+    height: 300px;
+    width: 300px;
+    cursor:pointer;
+    border-radius: 50%;
+    border: rebeccapurple 2px solid;
+    transition: .2s;
+}
+
+#catImg:hover {
+    transform: scale(1.5);
 }
 
 #rabImg {
-    border-radius: 10%;
-    border: black 2px solid;
+    height: 300px;
+    width: 300px;
+    cursor:pointer;
+    border-radius: 50%;
+    border: rebeccapurple 2px solid;
+    transition: .2s;
+}
+
+#rabImg:hover {
+    transform: scale(1.5);
 }
 
 #dogImg2 {
-    border-radius: 10%;
-    border: black 2px solid;
-    margin-left: 30%;
-
+    height: 300px;
+    width: 300px;
+    cursor:pointer;
+    border-radius: 50%;
+    border: rebeccapurple 2px solid;
+    margin-left: 37%;
+    transition: all .2s ease-in-out;
+}
+#dogImg2:hover {
+    transform: scale(1.3);
 }
 
 #catImg2 {
-    border-radius: 10%;
-    border: black 2px solid;
-    margin-left: 30%;
+    height: 300px;
+    width: 350px;
+    cursor:pointer;
+    border-radius: 50%;
+    border: rebeccapurple 2px solid;
+    text-align: center;
+    margin-left: 35%;
+    transition: all .2s ease-in-out;
+}
+#catImg2:hover {
+    transform: scale(1.3);
 }
 
 #rabImg2 {
-    border-radius: 10%;
-    border: black 2px solid;
-
+    height: 300px;
+    width: 370px;
+    cursor:pointer;
+    border-radius: 50%;
+    border: rebeccapurple 2px solid;
+    text-align: center;
+    margin-left: 35%;
+    transition: all .2s ease-in-out;
+}
+#rabImg2:hover {
+    transform: scale(1.3);
 }
 
-
-#start {
-    font-family: "Pangolin", monospace;
-    font-size: 600%;
-    background: goldenrod;
-    padding: 40%;
-
+.startButtons {
+    text-align: center;
 }
 
 #restart {
     display: none;
+    cursor:pointer;
     font-family: "Pangolin", monospace;
     font-size: 200%;
-    background: goldenrod;
-    position: relative;
+    background: none;
+    border: none;
+    color: rebeccapurple;
+    transition: .2s;
+    text-shadow: black 1px 1px 1px;
+    margin-left: 2%;
+    
+}
+#restart:hover {
+    transform: scale(1.3);
 }
 
 #choose {
-    display: none;
+    cursor:pointer;
     font-family: "Pangolin", monospace;
-    font-size: 500%;
+    text-shadow: black 2px 2px 2px;
+    font-size: 300%;
     background: goldenrod;
-    padding: 40%;
+    color: rebeccapurple;
+    background: none;
+    border: none;
+    transition: .2s;
+}
+
+#choose:hover {
+    transform: scale(1.8);
 }
 
 #dog {
@@ -131,55 +200,70 @@ h2 {
 
 
 #selectDog {
+    margin-top: 10%;
     display: none;
     font-family: "Indie Flower", monospace;
-    text-align: right;
-    font-size: 200%;
+    font-size: 150%;
+    text-shadow: black 1px 1px 1px;
 }
 
 #selectCat {
+    margin-top: 10%;
     display: none;
     font-family: "Indie Flower", monospace;
-    text-align: right;
-    font-size: 200%;
+    font-size: 150%;
+    text-shadow: black 1px 1px 1px;
 }
 
 #selectRab {
+    margin-top: 10%;
     display: none;
     font-family: "Indie Flower", monospace;
-    text-align: right;
-    font-size: 200%;
+    font-size: 150%;
+    text-shadow: black 1px 1px 1px;
 }
 
 
 #placeholder {
-    font-size: 400%;
+    font-size: 300%;
     font-family: "Indie Flower", monospace;
     color: rebeccapurple;
-    border-radius: 10%;
-    border-color: lightgreen;
+    padding-left: 30%;
     display: none;
 }
 
 #input {
+    text-decoration: none;
+    text-align: center;
     font-size: 200%;
     font-family: "Indie Flower", monospace;
     display: none;    
     color: rebeccapurple;
-    background-color: lightgreen;
+    background: none;
+    border: solid 2px rebeccapurple;
+    border-radius: 1em;
+    margin-left: 21.5%;
+    outline: none;
 }
 
 #submit {
+    cursor:pointer;
     font-size: 200%;
     font-family: "Indie Flower", monospace;
     display: none;
     color: rebeccapurple;
-    background-color: lightgreen;
+    background: none;
+    border: none;
+    padding-left: 33%;
+    text-decoration: underline;
 }
 
 .info {
     padding-left: 20%;
     display: none;
+    color: rebeccapurple;
+    font-style: oblique;
+
 }
 
 .animalButtons {
