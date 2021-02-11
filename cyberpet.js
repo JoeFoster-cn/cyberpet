@@ -1,69 +1,63 @@
 class Pet {
     constructor(name){
         this.name = name;
-        this.happiness = 0;
-        this.hunger = 0;
-        this.thirst = 0;
+        this._happiness = 100;
+        this._hunger = 100;
+        this._thirst = 100;
     }
 
-    play() {
-        console.log(this)
-        if (this.happiness == 0) {
-            console.log(`${this.name} is bored! ${this.name} wants to play`);
-            this.happiness++;
-        } else
-            console.log(`${this.name} is happy!`);
+    get hunger(){
+        return this._hunger;
     }
-    
+
+    get thirst(){
+        return this._thirst;
+    }
+
+    get happiness(){
+        return this._happiness;
+    }
+
+    set hunger(hunger) { //everytime hunger is called with an operator, it calls the setter here, 
+        if (hunger <= 0) {  //dont go below
+            this._hunger = 0
+        } else if (hunger > 100) { //dont go above 100
+            this._hunger = 100
+        } else {
+            this._hunger = hunger //stick to what you're given
+        }
+    }
+
+    set thirst(thirst) {
+        if (thirst <= 0) {
+            this._thirst = 0
+        } else if (thirst > 100) {
+            this._thirst = 100
+        } else {
+            this._thirst = thirst
+        }
+    }
+
+    set happiness(happiness) {
+        if (happiness <= 0) {
+            this._happiness = 0
+        } else if (happiness > 100) {
+            this._happiness = 100
+        } else {
+            this._happiness = happiness
+        }
+    }
     feed() {
-        console.log(this)
-        if (this.hunger == 0) {
-            console.log(`${this.name} is hungry ${this.name} needs to eat!`);
-            this.hunger++;
-        } else  
-            console.log(`${this.name} is full!`);
+        this.hunger += 2;
     }
     
     drink() {
-        console.log(this)
-        if (this.thirst == 0) {
-            console.log(`${this.name} is thirsty ${this.name} needs a drink!`);
-            this.thirst++;
-        } else
-            console.log(`${this.name} is full!`);
+        this.thirst += 1;
+    }
+    play() {
+        this.happiness += 8;
     }
 }
-    // get name(){
-    //     return this._name;
-    // }
-    // get play(){
-    //     return this._play;
-    // }
-    // get hunger(){
-    //     return this._hunger;
-    // }
-    // get thirst(){
-    //     return this._thirst;
-    // }
-    // eat(){
-    //     return this._hunger--;
-    // }
-    // drink(){
-    //     return this._thirst--; 
-    // }
-    // play(){
-    //     return this._happiness++; 
-    // }
-    // noplay(){
-    //     return (`${this.name} is bored!`);
-    // }
-    // wantDrink(){
-    //     return (`${this.name} wants a drink!`);
-    // }
-    // wantFood(){
-    //     return (`${this.name} wants feeding!`);
-    // }
-
 
 class Dog extends Pet {
     constructor(name, walk = 50){
@@ -79,10 +73,10 @@ class Dog extends Pet {
 }
 
 class Cat extends Pet {
-    constructor(name, needsBrush, needsCuddle){
+    constructor(name, needsBrush = false, needsCuddle = false){
         super(name);
-        this.needsBrush = needsBrush;
-        this.needsCuddle = needsCuddle;
+        this._needsBrush = needsBrush;
+        this._needsCuddle = needsCuddle;
     }
     get needsBrush(){
         return this.needsBrush;
@@ -93,16 +87,15 @@ class Cat extends Pet {
 }
 
 class Rabbit extends Pet {
-    constructor(name, needsClean, needsRun){
+    constructor(name, needsClean, needsCarrot){
         super(name);
-        this.needsClean = needsClean;
-        this.needsRun = needsRun;
+        this._needsClean = needsClean;
+        this._needsCarrot = needsCarrot;
     }
     get needsClean(){
-        return this.needsClean;
+        return this._needsClean;
     }
-    get needsRun(){
-        return this.needsRun;
+    get needsCarrot(){
+        return this._needsCarrot;
     }
 }
- 

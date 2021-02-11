@@ -26,7 +26,10 @@ const animalButtons = document.querySelector(".petButtons");
 const feed = document.querySelector("#feed");
 const drink = document.querySelector("#drink");
 const play = document.querySelector("#play");
-const progress = document.querySelector(".progress");
+const hunger = document.querySelector("#hunger");
+const thirst = document.querySelector("#thirst");
+const happiness = document.querySelector("#happiness");
+const progressDiv = document.querySelector(".progress");
 
 
 restart.addEventListener("click", (event) => {
@@ -88,29 +91,39 @@ submit.addEventListener("click", () => {
     selectDog.style.display = "none";
     animalButtons.style.display = "block";
     restart.style.display = "block";
-    progress.style.display = "block";
+    hunger.style.display = "block";
+    thirst.style.display = "block";
+    happiness.style.display = "block";
+    progressDiv.style.display = "block";
+    console.log(pet)
+    hunger.value = pet.hunger 
+    thirst.value = pet.thirst
+    happiness.value = pet.happiness
+    setInterval(() => { //hunger depreciation 
+        pet.hunger -= 5;
+        hunger.value = pet.hunger //progress bars = pet property of pet
+    }, 1500);
+    setInterval(() => { //thirst depreciation 
+        pet.thirst -= 3;
+        thirst.value = pet.thirst
+    }, 1900);
+    setInterval(() => {
+        pet.happiness -= 7;
+        happiness.value = pet.happiness
+    }, 2000);
 })
 
-feed.addEventListener("click", => {
+feed.addEventListener("click", () => {
     pet.feed();
+    hunger.value = pet.hunger
 })
 
-drink.addEventListener("click", => {
+drink.addEventListener("click", () => {
     pet.drink();
+    thirst.value = pet.thirst
 })
 
-play.addEventListener("click", => {
+play.addEventListener("click", () => {
     pet.play();
+    happiness.value = pet.happiness
 })
-
-
-
-
-
-
-// const petButtonFn = () => {
-//     play.addEventListener("click", => {pet.play()})
-//     feed.addEventListener ("click", => {pet.feed()})
-//     drink.addEventListener ("click", => {pet.drink()})
-// }
-
