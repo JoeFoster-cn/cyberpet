@@ -1,27 +1,27 @@
-class Pet {
+class Pet { //main pet class
     constructor(name){
         this.name = name;
-        this._happiness = 100;
-        this._hunger = 100;
-        this._thirst = 100;
+        this._happiness = 100; //initial level
+        this._hunger = 100; 
+        this._thirst = 100; 
     }
 
     get hunger(){
-        return this._hunger;
+        return this._hunger; //getter for hunger
     }
 
     get thirst(){
-        return this._thirst;
+        return this._thirst; 
     }
 
     get happiness(){
-        return this._happiness;
+        return this._happiness; 
     }
 
-    set hunger(hunger) { //everytime hunger is called with an operator, it calls the setter here, 
-        if (hunger <= 0) {  //dont go below
+    set hunger(hunger) { //everytime this setter is called with an operator
+        if (hunger <= 0) {  //don't go below 0
             this._hunger = 0
-        } else if (hunger > 100) { //dont go above 100
+        } else if (hunger > 100) { //don't go above 100
             this._hunger = 100
         } else {
             this._hunger = hunger //stick to what you're given
@@ -48,7 +48,7 @@ class Pet {
         }
     }
     feed() {
-        this.hunger += 2;
+        this.hunger += 2; //function increment level
     }
     
     drink() {
