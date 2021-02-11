@@ -8,16 +8,16 @@ class Pet {
 
     play() {
         console.log(this)
-        if (this.happiness === 0) {
-            console.log(`${this.name}, is bored! ${this.name} wants to play`);
+        if (this.happiness == 0) {
+            console.log(`${this.name} is bored! ${this.name} wants to play`);
             this.happiness++;
         } else
-            console.log(`${this.name}, is happy!`);
+            console.log(`${this.name} is happy!`);
     }
     
     feed() {
         console.log(this)
-        if (this.hunger === 0) {
+        if (this.hunger == 0) {
             console.log(`${this.name} is hungry ${this.name} needs to eat!`);
             this.hunger++;
         } else  
@@ -26,7 +26,7 @@ class Pet {
     
     drink() {
         console.log(this)
-        if (this.thirst === 0) {
+        if (this.thirst == 0) {
             console.log(`${this.name} is thirsty ${this.name} needs a drink!`);
             this.thirst++;
         } else

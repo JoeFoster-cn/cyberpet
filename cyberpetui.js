@@ -22,7 +22,11 @@ const info = document.querySelector(".info");
 const dogButtons = document.querySelector(".dogButtons");
 const catButtons = document.querySelector(".catButtons");
 const rabButtons = document.querySelector(".rabButtons");
-const animalButtons = document.querySelector(".animalButtons");
+const animalButtons = document.querySelector(".petButtons");
+const feed = document.querySelector("#feed");
+const drink = document.querySelector("#drink");
+const play = document.querySelector("#play");
+const progress = document.querySelector(".progress");
 
 
 restart.addEventListener("click", (event) => {
@@ -74,7 +78,7 @@ rabImg.addEventListener("click", (event) => {
     pet = new Rabbit ("Hoppy");
 })
 
-submit.addEventListener("click", () =>{
+submit.addEventListener("click", () => {
     placeholder.style.display = "block";
     placeholder.textContent = input.value;
     submit.style.display = "none";
@@ -84,16 +88,29 @@ submit.addEventListener("click", () =>{
     selectDog.style.display = "none";
     animalButtons.style.display = "block";
     restart.style.display = "block";
+    progress.style.display = "block";
+})
+
+feed.addEventListener("click", => {
+    pet.feed();
+})
+
+drink.addEventListener("click", => {
+    pet.drink();
+})
+
+play.addEventListener("click", => {
+    pet.play();
 })
 
 
 
-// const atchEL = () => {
-//     play.addEventListener("click", => {pet.play())} 
-//     feed.addEventListener pet.feed
-//     drink.addEventListener pet.drink
+
+
+
+// const petButtonFn = () => {
+//     play.addEventListener("click", => {pet.play()})
+//     feed.addEventListener ("click", => {pet.feed()})
+//     drink.addEventListener ("click", => {pet.drink()})
 // }
 
-// let petImg = document.getElementById("petImg").src = "./img/" + diceRoll + ".png";
-// diceNum = document.querySelector("#diceImg");
-// diceNum.style.display = "block"; 
