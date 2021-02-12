@@ -1,6 +1,4 @@
-//html progress bars?
-let pet;
-//variables - use let instead?
+//variables
 const start = document.querySelector("#start");
 const restart = document.querySelector("#restart");
 const choose = document.querySelector("#choose");
@@ -30,17 +28,17 @@ const hunger = document.querySelector("#hunger");
 const thirst = document.querySelector("#thirst");
 const happiness = document.querySelector("#happiness");
 const progressDiv = document.querySelector(".progress");
-
+let pet; //creates variable as undefined, then defined in pet img buttons as new Pet class
 
 restart.addEventListener("click", (event) => {
     location.reload();
-})
+}) //new game
 
 choose.addEventListener("click", (event) => {
     petImg.style.display = "block";
     choose.style.display = "none";
     restart.style.display = "none";
-})
+}) //choose pet
 
 dogImg.addEventListener("click", (event) => {
     petImg.style.display = "none";
@@ -53,7 +51,7 @@ dogImg.addEventListener("click", (event) => {
     submit.style.display = "block";
     info.style.display = "block"
     pet = new Dog ("Poppy");
-})
+}) //select Dog
 
 catImg.addEventListener("click", (event) => {
     petImg.style.display = "none";
@@ -66,7 +64,7 @@ catImg.addEventListener("click", (event) => {
     submit.style.display = "block";
     info.style.display = "block"
     pet = new Cat ("Prince");
-})
+}) //select Cat
 
 rabImg.addEventListener("click", (event) => {
     petImg.style.display = "none";
@@ -79,9 +77,9 @@ rabImg.addEventListener("click", (event) => {
     submit.style.display = "block";
     info.style.display = "block"
     pet = new Rabbit ("Hoppy");
-})
+}) //select Rabbit
 
-submit.addEventListener("click", () => {
+submit.addEventListener("click", () => {  //submit name, start game process
     placeholder.style.display = "block";
     placeholder.textContent = input.value;
     submit.style.display = "none";
@@ -96,34 +94,34 @@ submit.addEventListener("click", () => {
     happiness.style.display = "block";
     progressDiv.style.display = "block";
     console.log(pet)
-    hunger.value = pet.hunger 
+    hunger.value = pet.hunger // progress bar value = pet subclass and their level defined as 100 in Pet class
     thirst.value = pet.thirst
     happiness.value = pet.happiness
-    setInterval(() => { //hunger depreciation 
-        pet.hunger -= 5;
-        hunger.value = pet.hunger //progress bars = pet property of pet
-    }, 1500);
-    setInterval(() => { //thirst depreciation 
-        pet.thirst -= 3;
+    setInterval(() => { 
+        pet.hunger -= 5; //hunger depreciation 
+        hunger.value = pet.hunger //progress bar value = pet get property of pet class
+    }, 1500); //value reduction of progress bar in milliseconds
+    setInterval(() => { 
+        pet.thirst -= 3; //thirst depreciation 
         thirst.value = pet.thirst
-    }, 1900);
+    }, 1900); //value reduction of progress bar in milliseconds
     setInterval(() => {
-        pet.happiness -= 7;
+        pet.happiness -= 7; //happiness depreciation
         happiness.value = pet.happiness
-    }, 2000);
+    }, 2000); //value reduction of progress bar in milliseconds
 })
 
-feed.addEventListener("click", () => {
-    pet.feed();
-    hunger.value = pet.hunger
+feed.addEventListener("click", () => { //feed button
+    pet.feed(); //feed function defined in Pet class
+    hunger.value = pet.hunger 
 })
 
-drink.addEventListener("click", () => {
-    pet.drink();
+drink.addEventListener("click", () => { //drink button
+    pet.drink(); //drink function defined in Pet class
     thirst.value = pet.thirst
 })
 
-play.addEventListener("click", () => {
-    pet.play();
+play.addEventListener("click", () => { //play button
+    pet.play(); //play button defined in Pet class
     happiness.value = pet.happiness
 })

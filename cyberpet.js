@@ -59,6 +59,8 @@ class Pet { //main pet class
     }
 }
 
+//getters below are for version 2 of the game, ignore for now
+
 class Dog extends Pet {
     constructor(name, walk = 50){
         super(name);
